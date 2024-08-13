@@ -1,0 +1,6 @@
+taskkill /f /im "League of Legends.exe"
+taskkill /f /im "LeagueClient.exe"
+taskkill /f /im "LeagueClientUxRender.exe"
+taskkill /f /im "LeagueCrashHandler.exe"
+taskkill /f /im "RiotClientServices.exe"
+taskkill /f /im "RiotClientCrashHandler.exe"
