@@ -13,7 +13,6 @@ $folderPaths
 
 foreach ($path in $folderPaths) {
     try {
-        # Check if the path exists before trying to remove it
         if (Test-Path -Path $path) {
             Write-Host "Removing: $path"
             Remove-Item -Path $path -Recurse -Force
