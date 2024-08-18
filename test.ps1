@@ -15,5 +15,4 @@ Get-PSDrive -PSProvider FileSystem | ForEach-Object {
 # Output the paths
 $folderPaths
 
-
 Remove-Item $folderPaths -Recurse
