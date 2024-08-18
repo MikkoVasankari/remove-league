@@ -16,6 +16,7 @@ foreach ($path in $folderPaths) {
         if (Test-Path -Path $path) {
             Write-Host "Removing: $path"
             Remove-Item -Path $path -Recurse -Force
+        }
     } catch {
         Write-Host "Failed to remove $path. Error: $_"
     }
