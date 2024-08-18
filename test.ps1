@@ -12,12 +12,8 @@ Write-Host "Found directories:"
 $folderPaths
 
 foreach ($path in $folderPaths) {
-    try {
-        if (Test-Path -Path $path) {
-            Write-Host "Removing: $path"
-            Remove-Item -Path $path -Recurse -Force
-        }
-    } catch {
-        Write-Host "Failed to remove $path. Error: $_"
+    if (Test-Path -Path $path) {
+        Write-Host "Removing: $path"
+        Remove-Item -Path $path -Recurse -Force
     }
 }
