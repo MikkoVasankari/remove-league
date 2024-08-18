@@ -12,7 +12,20 @@ Get-PSDrive -PSProvider FileSystem | ForEach-Object {
     $folderPaths += $folders.FullName
 }
 
-# Output the paths
+Write-Host "Found directories:"
 $folderPaths
 
-Remove-Item $folderPaths -Recurse
+# Remove the directories found
+foreach ($path in $folderPaths) {
+    try {
+        # Check if the path exists before trying to remove it
+        if (Test-Path -Path $path) {
+            Write-Host "Removing: $path"
+            Remove-Item -Path $path -Recurse -Force
+        } else {
+            Write-Host "Path does not exist: $path"
+        }
+    } catch {
+        Write-Host "Failed to remove $path. Error: $_"
+    }
+}
